@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Example Cafe Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container" id="top">
+    <h1>EXAMPLE CAFE MENU</h1>
+
+    <div class="menu-bar">
+      <a href="#" class="menu-item home">
+        <img src="icons8-home-50.png" alt="Home" width="24" height="24" />
+      </a>
+      <a href="#starter" class="menu-item">STARTER</a>
+      <a href="#main" class="menu-item">MAIN COURSES</a>
+      <a href="#desserts" class="menu-item">DESSERTS</a>
+      <div class="menu-search">
+        <input type="text" placeholder="Search..." />
+        <button>Go</button>
+      </div>
+    </div>
+
+    <div class="content-row">
+      <div class="sidebar">
+        <button>Cafe Latte</button>
+        <button>Capuchino</button>
+        <button>Ocean Blue</button>
+        <button>Ice-cream Cafe</button>
+        <button>Order Online</button>
+        <img src="company.png" alt="Cafe group" class="circle-img" />
+      </div>
+
+      <div class="main-content">
+        <section id="starter">
+          <div class="highlight-wrapper">
+            <h2 class="highlight-title">Starter</h2>
+          </div>
+          <ul>
+            <li>Chestnut and Mushroom Goujons <span class="red-text">(v)</span></li>
+            <li>Goat Cheese <span class="red-text">(v)</span></li>
+            <li><span class="orange-text">HONEY SOY CHICKEN KEBABS <span class="red-text">(v)</span></span></li>
+            <li>Seafood Salad <span class="red-text">(v)</span></li>
+          </ul>
+          <a href="#top" class="back-to-top">Back to Top</a>
+        </section>
+
+        <section id="desserts">
+          <div class="highlight-wrapper">
+            <h2 class="highlight-title">Desserts</h2>
+          </div>
+          <ul>
+            <li>Lemon Sorbet <span class="red-text">(v)</span></li>
+            <li>Chocolate Mud Pie <span class="red-text">(v)</span></li>
+            <li>Pecan Pie <span class="red-text">(v)</span></li>
+            <li>Selection of fine Cheeses from Around the World <span class="red-text">(v)</span></li>
+          </ul>
+          <a href="#top" class="back-to-top">Back to Top</a>
+        </section>
+
+        <section id="info">
+          <div class="highlight-wrapper">
+            <h2 class="highlight-title">INFORMATION</h2>
+          </div>
+          <form class="info-form">
+            <div class="form-row">
+              <input type="text" placeholder="First Name" />
+              <input type="text" placeholder="Last Name" />
+            </div>
+            <div class="form-row">
+              <input type="email" placeholder="Email" />
+              <input type="tel" placeholder="Telephone" />
+            </div>
+            <div class="form-row">
+              <select>
+                <option>USA</option>
+                <option>Vietnam</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-row radio-group">
+              <label><input type="radio" name="citizen" /> Vietnamese</label>
+              <label><input type="radio" name="citizen" /> Foreigner</label>
+            </div>
+            <textarea placeholder="Comment"></textarea>
+            <div class="form-buttons">
+              <button type="submit">Submit</button>
+              <button type="reset">Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <footer>
+          <p>ABC Company © - 12345678 - abccoffee@gmail.com</p>
+        </footer>
+      </div>
+
+      <aside class="events">
+        <h2>Events</h2>
+        <div class="event">
+          <h3>Regular Meetings</h3>
+          <img src="meeting.png" alt="Meeting" />
+          <p>Host your regular team meetings or activities in the comfort of your own private room. <a href="#">Read more...</a></p>
+        </div>
+        <div class="event">
+          <h3>Product Launches</h3>
+          <img src="launch.png" alt="Launch" />
+          <p>Launch your product with ease in a space that truly fits its image. <a href="#">Read more...</a></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

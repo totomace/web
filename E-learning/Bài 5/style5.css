@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.stats-section {
+  background: linear-gradient(to top, #2c3e50, #34495e); /* Màu nền tím xanh như ảnh */
+  padding: 60px 0;
+  text-align: center;
+  color: white;
+}
+
+.stats-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-list li {
+  display: inline-block;
+  width: 200px;
+  margin: 0 20px;
+  vertical-align: top;
+}
+
+.stats-list i {
+  font-size: 42px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.number {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.label {
+  font-size: 14px;
+  opacity: 0.85;
+}

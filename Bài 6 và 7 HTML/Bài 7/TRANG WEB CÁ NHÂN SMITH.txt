@@ -1,0 +1,56 @@
+TRANG WEB CÁ NHÂN SMITH
+===========================
+
+GIỚI THIỆU
+Tôi là Smith, một sinh viên năm 2 chuyên ngành Công nghệ Thông tin tại Trường Đại học Bách Khoa TP.HCM. Tôi có niềm đam mê lớn với lập trình web và phát triển phần mềm.
+
+THÔNG TIN CÁ NHÂN
+Họ và tên: Nguyễn Văn Smith
+Tuổi: 20
+Lớp: CNTT2023-01
+Mã sinh viên: 20230001
+Ngày sinh: 15/03/2003
+Quê quán: Hà Nội
+Sở thích: Lập trình, đọc sách, chơi game, nghe nhạc
+KỸ NĂNG LẬP TRÌNH
+HTML/CSS - Trung cấp
+JavaScript - Cơ bản
+Python - Trung cấp
+Java - Cơ bản
+C++ - Cơ bản
+SQL - Cơ bản
+DỰ ÁN ĐÃ THỰC HIỆN
+Dự án 1: Website bán giày thể thao
+Thời gian: 6/2023 - 8/2023
+Công nghệ: HTML, CSS, JavaScript
+Mô tả: Xây dựng website bán hàng với giao diện đẹp, có tính năng giỏ hàng
+Dự án 2: Ứng dụng quản lý thư viện
+Thời gian: 9/2023 - 11/2023
+Công nghệ: Java, MySQL
+Mô tả: Phần mềm quản lý sách, độc giả, mượn/trả sách
+Dự án 3: Game Snake bằng Python
+Thời gian: 12/2023 - 1/2024
+Công nghệ: Python, Pygame
+Mô tả: Game rắn săn mồi cổ điển với đồ họa đẹp
+HỌC VẤN
+2018-2021: THPT Chu Văn An - Hà Nội (Học sinh giỏi)
+2021-2025: Đại học Bách Khoa TP.HCM - CNTT (GPA: 3.2/4.0)
+GIẢI THƯỞNG
+Giải Nhì cuộc thi lập trình sinh viên cấp trường (2023)
+Học bổng khuyến học cho sinh viên có thành tích tốt (2023)
+Chứng chỉ TOEIC 750 điểm (2023)
+MỤC TIÊU TƯƠNG LAI
+Ngắn hạn: Hoàn thành tốt chương trình đại học, thực tập tại các công ty công nghệ
+Dài hạn: Trở thành Full-stack Developer, khởi nghiệp trong lĩnh vực EdTech
+THÔNG TIN LIÊN HỆ
+Email: smith.nguyen@gmail.com
+Điện thoại: 0123-456-789
+Facebook: fb.com/smith.developer
+GitHub: github.com/smith-dev
+LinkedIn: linkedin.com/in/smith-nguyen
+QUOTE YÊU THÍCH
+"Code is like humor. When you have to explain it, it's bad." - Cory House
+
+GHI CHÚ THÊM
+Website này được tạo ra như một phần của bài tập môn Thiết kế Web. Tôi hy vọng qua trang web này, các bạn có thể hiểu thêm về tôi và hành trình học tập của mình trong lĩnh vực CNTT.
+

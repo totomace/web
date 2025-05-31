@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sky World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Thanh menu -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="logo">Sky World</div>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <div class="container">
+        <div class="form-section">
+            <h2>Registration information</h2>
+            <p>
+                Start your travel planning right now with our on-line tour registration form.
+                Just tell us a little about yourself and your group and one of our travel experts
+                will contact you to create the perfect tour package custom built for your group’s needs
+            </p>
+            <div class="form-wrapper">
+                <div class="label-column">
+                    <label>Title</label>
+                    <label>Full Name *</label>
+                    <label>Mailing Address</label>
+                    <label>City</label>
+                    <label>Country</label>
+                    <label>Specific questions or requests about your tour</label>
+                </div>
+                <div class="input-column">
+                    <form id="form1">
+                        <select>
+                            <option>Mr.</option>
+                            <option>Mrs.</option>
+                            <option>Ms.</option>
+                        </select>
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Mailing Address">
+                        <input type="text" placeholder="City">
+                        <input type="text" placeholder="Country">
+                        <textarea placeholder="Your questions or requests here..."></textarea>
+                    </form>
+                    <div class="button-group">
+                        <input type="submit" value="Submit" form="form1">
+                        <input type="reset" value="Reset" form="form1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="sky.png" alt="Ship">
+            <h3 class="quote">You’ve arrived.</h3>
+            <p class="subquote">Journeys as great as the destinations.</p>
+        </div>
+    </div>
+
+    <!-- Dòng * full màn hình -->
+    <h2 class="star-line" id="starLine"></h2>
+
+    <script>
+        // Tạo dòng * * * * * kéo dài toàn màn hình
+        const line = document.getElementById("starLine");
+        let stars = "";
+        const maxStars = Math.floor(window.innerWidth / 25); // 25px mỗi * cách ra
+
+        for (let i = 0; i < maxStars; i++) {
+            stars += "* ";
+        }
+
+        line.textContent = stars;
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>©2016 Sky World Tours. All rights reserved.</p>
+        <p>Contact information: <b>Student Name | Student ID</b> | Testing date: <i>16 Sept 2016</i></p>
+    </footer>
+</body>
+</html>

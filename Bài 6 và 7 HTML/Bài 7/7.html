@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Smith - Sinh viên UTH</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 20px 0;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            border: 3px solid #2a5298;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .content {
+            padding: 2rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 8px;
+            margin-top: 2.5rem;
+            font-size: 1.5em;
+        }
+        h3 {
+            color: #2a5298;
+            margin-top: 1.5rem;
+            font-size: 1.2em;
+        }
+        .intro-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #2a5298;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .info-table th, .info-table td {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: left;
+        }
+        .info-table th {
+            background-color: #1e3c72;
+            color: white;
+            font-weight: bold;
+        }
+        .info-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .info-table tr:hover {
+            background-color: #e3f2fd;
+        }
+        .skills-section {
+            background-color: #fafafa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        ol, ul {
+            padding-left: 2rem;
+        }
+        li {
+            margin: 0.5rem 0;
+            padding: 0.3rem 0;
+        }
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        .contact-section a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .quote-section {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+        .footer {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 2rem 0;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>SMITH - SINH VIÊN UTH</h1>
+            <div class="logo-section">
+                <img src="logo.jpg" alt="Logo UTH" class="logo">
+                <div style="color: white; text-align: center;">
+                    <h3 style="margin: 0; color: white;">Trường Đại học Giao thông Vận tải</h3>
+                    <p style="margin: 5px 0;">University of Transport and Communications</p>
+                </div>
+                <img src="avatar.jpg" alt="Smith Profile" class="logo">
+            </div>
+            <p><em>smith.txt - Nội dung trang web được lưu trữ</em></p>
+        </header>
+
+        <div class="content">
+            <!-- Giới thiệu -->
+            <h2>GIỚI THIỆU</h2>
+            <div class="intro-section">
+                <p>Tôi là <b>Smith</b>, một sinh viên năm 2 chuyên ngành <strong>Công nghệ Thông tin</strong> tại <strong>Trường Đại học Giao thông Vận tải (UTH)</strong>. Tôi có niềm đam mê lớn với lập trình web và các ứng dụng công nghệ trong giao thông vận tải.</p>
+            </div>
+
+            <!-- Thông tin cá nhân -->
+            <h2>THÔNG TIN CÁ NHÂN</h2>
+            <table class="info-table">
+                <tr>
+                    <th>Thông tin</th>
+                    <th>Chi tiết</th>
+                </tr>
+                <tr>
+                    <td><strong>Họ và tên</strong></td>
+                    <td>Nguyễn Văn Smith</td>
+                </tr>
+                <tr>
+                    <td><strong>Tuổi</strong></td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td><strong>Trường</strong></td>
+                    <td>Đại học Giao thông Vận tải (UTH)</td>
+                </tr>
+                <tr>
+                    <td><strong>Khoa</strong></td>
+                    <td>Công nghệ Thông tin</td>
+                </tr>
+                <tr>
+                    <td><strong>Lớp</strong></td>
+                    <td>CNTT2023-01</td>
+                </tr>
+                <tr>
+                    <td><strong>Mã sinh viên</strong></td>
+                    <td>UTH20230001</td>
+                </tr>
+                <tr>
+                    <td><strong>Ngày sinh</strong></td>
+                    <td>15/03/2003</td>
+                </tr>
+                <tr>
+                    <td><strong>Quê quán</strong></td>
+                    <td>Hà Nội</td>
+                </tr>
+                <tr>
+                    <td><strong>Sở thích</strong></td>
+                    <td>Lập trình, nghiên cứu ITS, đọc sách, chơi game</td>
+                </tr>
+            </table>
+
+            <!-- Kỹ năng lập trình -->
+            <h2>KỸ NĂNG LẬP TRÌNH</h2>
+            <div class="skills-section">
+                <ol>
+                    <li><span class="highlight">HTML/CSS</span> - Trung cấp</li>
+                    <li><span class="highlight">JavaScript</span> - Cơ bản</li>
+                    <li><span class="highlight">Python</span> - Trung cấp</li>
+                    <li><span class="highlight">Java</span> - Cơ bản</li>
+                    <li><span class="highlight">C++</span> - Cơ bản</li>
+                    <li><span class="highlight">SQL</span> - Cơ bản</li>
+                    <li><span class="highlight">GIS Programming</span> - Cơ bản</li>
+                </ol>
+            </div>
+
+            <!-- Dự án đã thực hiện -->
+            <h2>DỰ ÁN ĐÃ THỰC HIỆN</h2>
+            
+            <div class="project-card">
+                <h3>Dự án 1: Website quản lý giao thông</h3>
+                <ul>
+                    <li><strong>Thời gian:</strong> 6/2023 - 8/2023</li>
+                    <li><strong>Công nghệ:</strong> HTML, CSS, JavaScript</li>
+                    <li><strong>Mô tả:</strong> Hệ thống hiển thị thông tin giao thông thời gian thực</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Dự án 2: Ứng dụng quản lý xe buýt</h3>
+                <ul>
+                    <li><strong>Thời gian:</strong> 9/2023 - 11/2023</li>
+                    <li><strong>Công nghệ:</strong> Java, MySQL</li>
+                    <li><strong>Mô tả:</strong> Phần mềm theo dõi lộ trình và quản lý xe buýt</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Dự án 3: Game mô phỏng giao thông</h3>
+                <ul>
+                    <li><strong>Thời gian:</strong> 12/2023 - 1/2024</li>
+                    <li><strong>Công nghệ:</strong> Python, Pygame</li>
+                    <li><strong>Mô tả:</strong> Game mô phỏng điều khiển giao thông tại ngã tư</li>
+                </ul>
+            </div>
+
+            <!-- Học vấn -->
+            <h2>HỌC VẤN</h2>
+            <ul>
+                <li><strong>2018-2021:</strong> THPT Chu Văn An - Hà Nội <em>(Học sinh giỏi)</em></li>
+                <li><strong>2021-2025:</strong> Đại học Giao thông Vận tải - CNTT <em>(GPA: 3.2/4.0)</em></li>
+            </ul>
+
+            <!-- Giải thưởng -->
+            <h2>GIẢI THƯỞNG</h2>
+            <ul>
+                <li>Giải <b>Nhì</b> cuộc thi lập trình sinh viên UTH (2023)</li>
+                <li>Học bổng khuyến học UTH cho sinh viên có thành tích tốt (2023)</li>
+                <li>Chứng chỉ TOEIC 750 điểm (2023)</li>
+                <li>Giải <b>Ba</b> cuộc thi ý tưởng khởi nghiệp trong giao thông (2024)</li>
+            </ul>
+
+            <hr>
+
+            <!-- Mục tiêu tương lai -->
+            <h2>MỤC TIÊU TƯƠNG LAI</h2>
+            <ul>
+                <li><strong>Ngắn hạn:</strong> Hoàn thành tốt chương trình đại học, thực tập tại các công ty công nghệ giao thông</li>
+                <li><strong>Dài hạn:</strong> Trở thành chuyên gia về <i>Intelligent Transportation Systems (ITS)</i>, phát triển các giải pháp công nghệ cho giao thông Việt Nam</li>
+            </ul>
+
+            <!-- Quote yêu thích -->
+            <div class="quote-section">
+                <p><strong><i>"Technology is best when it brings people together and makes transportation safer."</i></strong></p>
+                <p style="text-align: right; margin: 0;"><em>- Smith</em></p>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <h2>THÔNG TIN LIÊN HỆ</h2>
+            <div class="contact-section">
+                <table style="width: 100%; color: white;">
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td><a href="mailto:smith.nguyen@uth.edu.vn">smith.nguyen@uth.edu.vn</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Điện thoại:</strong></td>
+                        <td>0123-456-789</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Facebook:</strong></td>
+                        <td><a href="#">fb.com/smith.uth</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>GitHub:</strong></td>
+                        <td><a href="#">github.com/smith-uth</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>LinkedIn:</strong></td>
+                        <td><a href="#">linkedin.com/in/smith-uth</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Ghi chú thêm -->
+            <h2>GHI CHÚ THÊM</h2>
+            <p>Website này được tạo ra như một phần của bài tập môn <strong>Thiết kế Web</strong> tại <b>UTH</b>.<br>
+            Tôi hy vọng sẽ góp phần vào việc ứng dụng công nghệ để phát triển hệ thống giao thông vận tải hiện đại và bền vững cho Việt Nam.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Smith - Sinh viên Đại học Giao thông Vận tải<br>
+            <small>Website được thiết kế cho Bài tập 7 - Thiết kế trang web theo ý tưởng</small></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+body {
+  font-family: "Times New Roman", serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 2px solid #c77;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #a00;
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #f2f2f2;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0 0 5px 0;
+}
+
+nav {
+  background-color: #f8f8ff;
+  font-size: 14px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+nav a {
+  margin-right: 10px;
+  color: #0000ee;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  background-color: #fff9db;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background-color: transparent; /* không nền toàn bộ */
+}
+
+.highlight-title {
+  background-color: #fff9db; /* nền vàng */
+  padding: 10px 12px;
+  width: 100%;               /* phủ toàn hàng */
+  display: block;            /* để thẻ h2 chiếm nguyên dòng */
+  color: #a00;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 8px 0;
+}
+
+h2 {
+  color: #800000;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+ul {
+  margin: 0 0 10px 20px;
+  padding: 0;
+  list-style-type: disc;
+  font-size: 16px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.v {
+  color: red;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.highlight {
+  color: #cc6600;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.back {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.back:hover {
+  color: #ff3300;
+}
+
+h1 {
+  text-align: center;
+  color: #a00;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 28px;
+  text-shadow: 0px 10px 8px rgba(170, 0, 0, 0.4); /* bóng mờ đỏ */
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Phản chiếu chữ dưới */
+h1::after {
+  content: "EXAMPLE CAFE MENU";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #a00;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 28px;
+  opacity: 0.2;
+  transform: scaleY(-1);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.back-to-top {
+  color: #a00;                /* đỏ đậm */
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.back-to-top:hover {
+  color: #ff3300;             /* đỏ tươi khi rê chuột */
+}
+
+.orange-text {
+  color: #cc6600;            /* màu cam */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.red-text {
+  color: #a00;       /* đỏ đậm */
+  font-weight: bold;
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  background-color: #e99694; /* nền hồng */
+  padding: 10px;
+  border-top: 1px solid #c44;
+  border-bottom: 4px solid #f8f8e0;
+  gap: 10px;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 12px;
+  border-left: 2px solid blue;
+  white-space: nowrap; /* 👈 NGĂN XUỐNG DÒNG chữ */
+}
+
+.menu-item:first-of-type {
+  border-left: none;
+  padding-left: 0;
+}
+
+.menu-item img {
+  vertical-align: middle;
+}
+
+.menu-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-search input[type="text"] {
+  padding: 4px 8px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.menu-search button {
+  padding: 4px 8px;
+  border: 1px solid #999;
+  background-color: white;
+  cursor: pointer;
+}

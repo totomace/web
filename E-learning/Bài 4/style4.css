@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+.portfolio {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background-color: #009688;
+  margin: 0 auto 30px auto;
+}
+
+.categories {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.categories li {
+  display: inline;
+  margin: 0 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.categories li.active {
+  color: #009688;
+  font-weight: bold;
+}
+
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery li {
+  float: left;
+  width: 30%;
+  margin: 1.66%;
+  height: 150px;
+  background-color: #8BC34A;
+  color: white;
+  font-size: 16px;
+  line-height: 150px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.gallery::after {
+  content: "";
+  display: block;
+  clear: both;
+}

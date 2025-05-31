@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: #99CCFF;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #99CCFF;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .logo {
+            width: 250px;
+            margin: 0 auto;
+            background-color: #00CCCC;
+            border-radius: 15px;
+            box-shadow: 5px 5px 8px #666;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            position: relative;
+            border: 2px solid black; /* <-- thêm viền đen */
+        }
+        
+        .logo .lightning {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            transform: rotate(-20deg);
+        }
+
+        .logo .title-top {
+            font-size: 24px;
+            border-bottom: 2px solid black;
+            width: 70%;
+            margin: 0 auto;
+            padding-bottom: 5px;
+        }
+
+        .logo .title-bottom {
+            font-size: 22px;
+            margin-top: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo">
+            <div class="title-top">Jackson</div>
+            <div class="title-bottom">Electronics</div>
+        </div>
+
+        <h2 style="text-align:center;">Registration Form</h2>
+        <p style="text-align:center;">Register your Jackson Electronics product here</p>
+
+        <form>
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="firstName" /></td>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="lastName" /></td>
+                </tr>
+                <tr>
+                    <td>Address #1:</td>
+                    <td colspan="3"><input type="text" name="address1" style="width: 100%;" /></td>
+                </tr>
+                <tr>
+                    <td>Address #2:</td>
+                    <td colspan="3"><input type="text" name="address2" style="width: 100%;" /></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td><input type="text" name="city" /></td>
+                    <td>State:</td>
+                    <td><input type="text" name="state" /></td>
+                </tr>
+                <tr>
+                    <td>Zip:</td>
+                    <td><input type="text" name="zip" /></td>
+                    <td>Country:</td>
+                    <td><input type="text" name="country" value="United States" /></td>
+                </tr>
+                <tr>
+                    <td>Product:</td>
+                    <td colspan="3">
+                        <select name="product">
+                            <option>ScanMaster</option>
+                            <option>PhotoPro</option>
+                            <option>PrintMax</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date Purchased:</td>
+                    <td><input type="date" name="datePurchased" /></td>
+                    <td>Serial #:</td>
+                    <td><input type="text" name="serial" /></td>
+                </tr>
+                <tr>
+                    <td>Used for:</td>
+                    <td colspan="3">
+                        <input type="radio" name="use" value="Home" /> Home
+                        <input type="radio" name="use" value="Business" checked /> Business
+                        <input type="radio" name="use" value="Government" /> Government
+                        <input type="radio" name="use" value="Educational Institution" /> Educational Institution
+                        <input type="radio" name="use" value="Other" /> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>System (check all that apply):</td>
+                    <td colspan="3">
+                        <input type="checkbox" name="system" value="Windows" /> Windows
+                        <input type="checkbox" name="system" value="Macintosh" /> Macintosh
+                        <input type="checkbox" name="system" value="UNIX" /> UNIX
+                        <input type="checkbox" name="system" value="Other" /> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comments?</td>
+                    <td colspan="3"><textarea name="comments"></textarea></td>
+                </tr>
+            </table>
+
+            <div class="button-container">
+                <input type="submit" value="Click to register" />
+                <input type="reset" value="Click to cancel" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
