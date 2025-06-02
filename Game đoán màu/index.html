@@ -62,7 +62,17 @@
         <div class="game-over-modal" id="gameOverModal">
             <div class="modal-content">
                 <h2 id="gameOverTitle">Game Over!</h2>
-                <p id="gameOverMessage">Điểm số của bạn: <span id="finalScore">0</span></p>
+                <div class="game-summary">
+                    <p>Điểm số: <span id="finalScore">0</span></p>
+                    <p>Level đạt được: <span id="finalLevel">1</span></p>
+                    <div class="answer-summary">
+                        <p>✅ Đoán đúng: <span id="correctAnswers">0</span> lần</p>
+                        <p>❌ Đoán sai: <span id="wrongAnswers">0</span> lần</p>
+                        <p>⏰ Hết giờ: <span id="timeoutAnswers">0</span> lần</p>
+                        <p>🎯 Tỷ lệ chính xác: <span id="gameAccuracy">0%</span></p>
+                    </div>
+                    <p>🔥 Combo cao nhất: <span id="maxCombo">0</span></p>
+                </div>
                 <p id="newRecordMessage" style="display: none;">🎉 Kỷ lục mới!</p>
                 <button class="btn btn-primary" id="playAgainBtn">Chơi lại</button>
             </div>
@@ -77,19 +87,42 @@
         </div>
 
         <div class="stats-panel" id="statsPanel">
-            <h3>Thống kê</h3>
-            <div class="stat-item">
-                <span>Tổng số game đã chơi:</span>
-                <span id="totalGames">0</span>
+            <h3>📊 Thống kê tổng thể</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span>🎮 Tổng số game:</span>
+                    <span id="totalGames">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>✅ Tổng đoán đúng:</span>
+                    <span id="totalCorrectAll">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>❌ Tổng đoán sai:</span>
+                    <span id="totalWrongAll">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>⏰ Tổng hết giờ:</span>
+                    <span id="totalTimeoutAll">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>🎯 Tỷ lệ chính xác:</span>
+                    <span id="accuracy">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span>🔥 Combo cao nhất:</span>
+                    <span id="bestCombo">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>🏆 Điểm cao nhất:</span>
+                    <span id="bestScore">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>📈 Level cao nhất:</span>
+                    <span id="bestLevel">1</span>
+                </div>
             </div>
-            <div class="stat-item">
-                <span>Tỷ lệ chính xác:</span>
-                <span id="accuracy">0%</span>
-            </div>
-            <div class="stat-item">
-                <span>Combo cao nhất:</span>
-                <span id="bestCombo">0</span>
-            </div>
+            <button class="btn btn-secondary" id="resetStatsBtn">🗑️ Xóa thống kê</button>
         </div>
 
         <footer class="footer">

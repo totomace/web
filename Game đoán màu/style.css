@@ -305,8 +305,47 @@ body {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    max-width: 500px;
     width: 90%;
+}
+
+.game-summary {
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.answer-summary {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 2px solid #e2e8f0;
+}
+
+.answer-summary p {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stats-grid .stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    font-weight: bold;
 }
 
 .modal-content h2 {

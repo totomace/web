@@ -5,6 +5,7 @@ class ColorGuessingGame {
         this.level = 1;
         this.lives = 3;
         this.combo = 0;
+        this.maxComboThisGame = 0;
         this.timeLeft = 30;
         this.gameActive = false;
         this.gamePaused = false;
@@ -13,10 +14,18 @@ class ColorGuessingGame {
         this.timer = null;
         this.difficulty = 'medium';
         
-        // Statistics
+        // Game session statistics
+        this.correctAnswersThisGame = 0;
+        this.wrongAnswersThisGame = 0;
+        this.timeoutAnswersThisGame = 0;
+        
+        // Overall statistics
         this.totalGames = parseInt(localStorage.getItem('colorGameTotalGames')) || 0;
-        this.totalCorrect = parseInt(localStorage.getItem('colorGameTotalCorrect')) || 0;
+        this.totalCorrectAll = parseInt(localStorage.getItem('colorGameTotalCorrectAll')) || 0;
+        this.totalWrongAll = parseInt(localStorage.getItem('colorGameTotalWrongAll')) || 0;
+        this.totalTimeoutAll = parseInt(localStorage.getItem('colorGameTotalTimeoutAll')) || 0;
         this.bestCombo = parseInt(localStorage.getItem('colorGameBestCombo')) || 0;
+        this.bestLevel = parseInt(localStorage.getItem('colorGameBestLevel')) || 1;
         
         this.initializeElements();
         this.bindEvents();
@@ -49,20 +58,31 @@ class ColorGuessingGame {
             statsBtn: document.getElementById('statsBtn'),
             rulesBtn: document.getElementById('rulesBtn'),
             closeRulesBtn: document.getElementById('closeRulesBtn'),
+            resetStatsBtn: document.getElementById('resetStatsBtn'),
             
             // Modals
             gameOverModal: document.getElementById('gameOverModal'),
             pauseModal: document.getElementById('pauseModal'),
             rulesModal: document.getElementById('rulesModal'),
             gameOverTitle: document.getElementById('gameOverTitle'),
-            gameOverMessage: document.getElementById('gameOverMessage'),
             finalScore: document.getElementById('finalScore'),
+            finalLevel: document.getElementById('finalLevel'),
+            correctAnswers: document.getElementById('correctAnswers'),
+            wrongAnswers: document.getElementById('wrongAnswers'),
+            timeoutAnswers: document.getElementById('timeoutAnswers'),
+            gameAccuracy: document.getElementById('gameAccuracy'),
+            maxCombo: document.getElementById('maxCombo'),
             newRecordMessage: document.getElementById('newRecordMessage'),
             
             // Stats
             totalGames: document.getElementById('totalGames'),
+            totalCorrectAll: document.getElementById('totalCorrectAll'),
+            totalWrongAll: document.getElementById('totalWrongAll'),
+            totalTimeoutAll: document.getElementById('totalTimeoutAll'),
             accuracy: document.getElementById('accuracy'),
-            bestComboStat: document.getElementById('bestCombo')
+            bestComboStat: document.getElementById('bestCombo'),
+            bestScore: document.getElementById('bestScore'),
+            bestLevel: document.getElementById('bestLevel')
         };
     }
     
@@ -76,6 +96,7 @@ class ColorGuessingGame {
         this.elements.statsBtn.addEventListener('click', () => this.toggleStats());
         this.elements.rulesBtn.addEventListener('click', () => this.showRules());
         this.elements.closeRulesBtn.addEventListener('click', () => this.hideRules());
+        this.elements.resetStatsBtn.addEventListener('click', () => this.resetStats());
         this.elements.difficulty.addEventListener('change', (e) => {
             this.difficulty = e.target.value;
             if (this.gameActive) {
@@ -98,9 +119,15 @@ class ColorGuessingGame {
         this.level = 1;
         this.lives = 3;
         this.combo = 0;
+        this.maxComboThisGame = 0;
         this.timeLeft = 30;
         this.gameActive = true;
         this.gamePaused = false;
+        
+        // Reset game session stats
+        this.correctAnswersThisGame = 0;
+        this.wrongAnswersThisGame = 0;
+        this.timeoutAnswersThisGame = 0;
         
         this.hideAllModals();
         this.updateDisplay();
@@ -236,14 +263,19 @@ class ColorGuessingGame {
     handleCorrectAnswer(selectedOption) {
         selectedOption.classList.add('correct');
         this.combo++;
-        const points = 10 * this.combo;
-        this.score += points;
-        this.totalCorrect++;
+        this.correctAnswersThisGame++;
+        
+        if (this.combo > this.maxComboThisGame) {
+            this.maxComboThisGame = this.combo;
+        }
         
         if (this.combo > this.bestCombo) {
             this.bestCombo = this.combo;
             localStorage.setItem('colorGameBestCombo', this.bestCombo.toString());
         }
+        
+        const points = 10 * this.combo;
+        this.score += points;
         
         this.showCombo();
         this.updateDisplay();
@@ -255,6 +287,7 @@ class ColorGuessingGame {
     handleIncorrectAnswer(selectedOption) {
         selectedOption.classList.add('incorrect');
         this.lives--;
+        this.wrongAnswersThisGame++;
         this.combo = 0;
         this.hideCombo();
         
@@ -322,6 +355,7 @@ class ColorGuessingGame {
     
     timeUp() {
         this.lives--;
+        this.timeoutAnswersThisGame++;
         this.combo = 0;
         this.hideCombo();
         
@@ -359,6 +393,17 @@ class ColorGuessingGame {
         clearInterval(this.timer);
         this.totalGames++;
         
+        // Update level record
+        if (this.level > this.bestLevel) {
+            this.bestLevel = this.level;
+            localStorage.setItem('colorGameBestLevel', this.bestLevel.toString());
+        }
+        
+        // Update overall statistics
+        this.totalCorrectAll += this.correctAnswersThisGame;
+        this.totalWrongAll += this.wrongAnswersThisGame;
+        this.totalTimeoutAll += this.timeoutAnswersThisGame;
+        
         // Check for new high score
         let isNewRecord = false;
         if (this.score > this.highScore) {
@@ -367,13 +412,25 @@ class ColorGuessingGame {
             isNewRecord = true;
         }
         
-        // Save statistics
+        // Save all statistics
         localStorage.setItem('colorGameTotalGames', this.totalGames.toString());
-        localStorage.setItem('colorGameTotalCorrect', this.totalCorrect.toString());
+        localStorage.setItem('colorGameTotalCorrectAll', this.totalCorrectAll.toString());
+        localStorage.setItem('colorGameTotalWrongAll', this.totalWrongAll.toString());
+        localStorage.setItem('colorGameTotalTimeoutAll', this.totalTimeoutAll.toString());
         
-        // Show game over modal
-        this.elements.gameOverTitle.textContent = isNewRecord ? 'Kỷ lục mới!' : 'Game Over!';
+        // Calculate game accuracy
+        const totalAnswers = this.correctAnswersThisGame + this.wrongAnswersThisGame + this.timeoutAnswersThisGame;
+        const gameAccuracy = totalAnswers > 0 ? Math.round((this.correctAnswersThisGame / totalAnswers) * 100) : 0;
+        
+        // Show game over modal with detailed stats
+        this.elements.gameOverTitle.textContent = isNewRecord ? '🎉 Kỷ lục mới!' : 'Game Over!';
         this.elements.finalScore.textContent = this.score;
+        this.elements.finalLevel.textContent = this.level;
+        this.elements.correctAnswers.textContent = this.correctAnswersThisGame;
+        this.elements.wrongAnswers.textContent = this.wrongAnswersThisGame;
+        this.elements.timeoutAnswers.textContent = this.timeoutAnswersThisGame;
+        this.elements.gameAccuracy.textContent = gameAccuracy + '%';
+        this.elements.maxCombo.textContent = this.maxComboThisGame;
         this.elements.newRecordMessage.style.display = isNewRecord ? 'block' : 'none';
         this.elements.gameOverModal.style.display = 'flex';
         
@@ -403,9 +460,44 @@ class ColorGuessingGame {
     
     updateStats() {
         this.elements.totalGames.textContent = this.totalGames;
-        const accuracy = this.totalGames > 0 ? Math.round((this.totalCorrect / this.totalGames) * 100) : 0;
+        this.elements.totalCorrectAll.textContent = this.totalCorrectAll;
+        this.elements.totalWrongAll.textContent = this.totalWrongAll;
+        this.elements.totalTimeoutAll.textContent = this.totalTimeoutAll;
+        
+        const totalAnswers = this.totalCorrectAll + this.totalWrongAll + this.totalTimeoutAll;
+        const accuracy = totalAnswers > 0 ? Math.round((this.totalCorrectAll / totalAnswers) * 100) : 0;
         this.elements.accuracy.textContent = `${accuracy}%`;
+        
         this.elements.bestComboStat.textContent = this.bestCombo;
+        this.elements.bestScore.textContent = this.highScore;
+        this.elements.bestLevel.textContent = this.bestLevel;
+    }
+    
+    resetStats() {
+        if (confirm('🗑️ Bạn có chắc muốn xóa tất cả thống kê không?')) {
+            // Reset all statistics
+            this.totalGames = 0;
+            this.totalCorrectAll = 0;
+            this.totalWrongAll = 0;
+            this.totalTimeoutAll = 0;
+            this.bestCombo = 0;
+            this.bestLevel = 1;
+            this.highScore = 0;
+            
+            // Clear localStorage
+            localStorage.removeItem('colorGameTotalGames');
+            localStorage.removeItem('colorGameTotalCorrectAll');
+            localStorage.removeItem('colorGameTotalWrongAll');
+            localStorage.removeItem('colorGameTotalTimeoutAll');
+            localStorage.removeItem('colorGameBestCombo');
+            localStorage.removeItem('colorGameBestLevel');
+            localStorage.removeItem('colorGameHighScore');
+            
+            this.updateDisplay();
+            this.updateStats();
+            
+            alert('✅ Đã xóa tất cả thống kê!');
+        }
     }
     
     showRules() {
