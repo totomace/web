@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.comment-text {
+  max-width: 90%;
+}
+
+.comment-text p {
+  margin: 5px 0;
+}
+
+.comment-text .name {
+  font-weight: bold;
+  color: green;
+}
+
+.comment-text .date {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.avatar {
+  font-size: 30px;
+}

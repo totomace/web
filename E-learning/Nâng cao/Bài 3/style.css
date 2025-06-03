@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 60px;
+}
+
+.section.reverse {
+    flex-direction: row-reverse;
+}
+
+.text {
+    flex: 1;
+}
+
+.text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.text strong {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.blue-btn {
+    background-color: #4DB8FF;
+}
+
+.green-btn {
+    background-color: #A0EB86;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Giữ nguyên căn trái cho section 2 icon */
+.icons-left .image {
+    justify-content: flex-start;
+}
