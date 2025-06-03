@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Đoán Màu Nâng Cao</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🎨 Game Đoán Màu</h1>
+            <div class="game-info">
+                <div class="score-board">
+                    <span class="score">Điểm: <span id="score">0</span></span>
+                    <span class="high-score">Kỷ lục: <span id="highScore">0</span></span>
+                </div>
+                <div class="level-info">
+                    <span class="level">Level: <span id="level">1</span></span>
+                    <span class="lives">Mạng: <span id="lives">❤️❤️❤️</span></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <div class="difficulty-selector">
+                <label>Độ khó:</label>
+                <select id="difficulty">
+                    <option value="easy">Dễ (3 màu)</option>
+                    <option value="medium" selected>Trung bình (6 màu)</option>
+                    <option value="hard">Khó (9 màu)</option>
+                </select>
+            </div>
+
+            <div class="target-color-section">
+                <h2>Tìm màu này:</h2>
+                <div class="target-color" id="targetColor"></div>
+                <div class="color-code" id="colorCode">RGB(?, ?, ?)</div>
+                <div class="timer-container">
+                    <div class="timer-bar">
+                        <div class="timer-fill" id="timerFill"></div>
+                    </div>
+                    <span class="timer-text" id="timerText">30s</span>
+                </div>
+            </div>
+
+            <div class="color-options" id="colorOptions">
+                <!-- Color buttons will be generated here -->
+            </div>
+
+            <div class="game-controls">
+                <button class="btn btn-primary" id="newGameBtn">Game Mới</button>
+                <button class="btn btn-secondary" id="hintBtn">Gợi ý (5 điểm)</button>
+                <button class="btn btn-secondary" id="pauseBtn">Tạm dừng</button>
+            </div>
+
+            <div class="combo-counter" id="comboCounter" style="display: none;">
+                <span class="combo-text">COMBO x<span id="comboValue">1</span></span>
+            </div>
+        </main>
+
+        <div class="game-over-modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2 id="gameOverTitle">Game Over!</h2>
+                <div class="game-summary">
+                    <p>Điểm số: <span id="finalScore">0</span></p>
+                    <p>Level đạt được: <span id="finalLevel">1</span></p>
+                    <div class="answer-summary">
+                        <p>✅ Đoán đúng: <span id="correctAnswers">0</span> lần</p>
+                        <p>❌ Đoán sai: <span id="wrongAnswers">0</span> lần</p>
+                        <p>⏰ Hết giờ: <span id="timeoutAnswers">0</span> lần</p>
+                        <p>🎯 Tỷ lệ chính xác: <span id="gameAccuracy">0%</span></p>
+                    </div>
+                    <p>🔥 Combo cao nhất: <span id="maxCombo">0</span></p>
+                </div>
+                <p id="newRecordMessage" style="display: none;">🎉 Kỷ lục mới!</p>
+                <button class="btn btn-primary" id="playAgainBtn">Chơi lại</button>
+            </div>
+        </div>
+
+        <div class="pause-modal" id="pauseModal">
+            <div class="modal-content">
+                <h2>Game đã tạm dừng</h2>
+                <button class="btn btn-primary" id="resumeBtn">Tiếp tục</button>
+                <button class="btn btn-secondary" id="mainMenuBtn">Menu chính</button>
+            </div>
+        </div>
+
+        <div class="stats-panel" id="statsPanel">
+            <h3>📊 Thống kê tổng thể</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span>🎮 Tổng số game:</span>
+                    <span id="totalGames">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>✅ Tổng đoán đúng:</span>
+                    <span id="totalCorrectAll">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>❌ Tổng đoán sai:</span>
+                    <span id="totalWrongAll">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>⏰ Tổng hết giờ:</span>
+                    <span id="totalTimeoutAll">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>🎯 Tỷ lệ chính xác:</span>
+                    <span id="accuracy">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span>🔥 Combo cao nhất:</span>
+                    <span id="bestCombo">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>🏆 Điểm cao nhất:</span>
+                    <span id="bestScore">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>📈 Level cao nhất:</span>
+                    <span id="bestLevel">1</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" id="resetStatsBtn">🗑️ Xóa thống kê</button>
+        </div>
+
+        <footer class="footer">
+            <button class="btn btn-info" id="statsBtn">Thống kê</button>
+            <button class="btn btn-info" id="rulesBtn">Hướng dẫn</button>
+        </footer>
+    </div>
+
+    <div class="rules-modal" id="rulesModal">
+        <div class="modal-content">
+            <h2>Hướng dẫn chơi</h2>
+            <ul>
+                <li>Quan sát màu mục tiêu và chọn màu giống nhất</li>
+                <li>Mỗi câu trả lời đúng được 10 điểm</li>
+                <li>Combo liên tiếp sẽ nhân đôi điểm số</li>
+                <li>Bạn có 3 mạng, mất mạng khi trả lời sai</li>
+                <li>Sử dụng gợi ý tốn 5 điểm</li>
+                <li>Thời gian giới hạn: 30 giây mỗi câu</li>
+            </ul>
+            <button class="btn btn-primary" id="closeRulesBtn">Đóng</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
