@@ -1,0 +1,48 @@
+body {
+  font-family: Arial;
+}
+.container {
+  width: 1000px;
+  margin: auto;
+  border: 2px solid #ccc;
+  padding: 10px;
+}
+.header {
+  width: 100%;
+  height: auto;
+}
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+.left, .center, .right {
+  width: 32%;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background-color: #ddd;
+  text-align: center;
+}
+td {
+  text-align: center;
+  padding: 5px;
+}
+a {
+  color: blue;
+  text-decoration: none;
+}
+img#car-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid #666;
+  margin-top: 10px;
+}
+#car-price {
+  color: green;
+  font-weight: bold;
+}
